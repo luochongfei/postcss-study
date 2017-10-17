@@ -1,0 +1,86 @@
+/*变量*/
+.box1{
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    background:#fff;
+    border-radius:3px;
+}
+
+/*引用*/
+.box2{
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+/*计算*/
+.box3{
+    font-size:0.13333px;
+}  
+
+/*自定义选择器*/
+h1,
+h2,
+h3,
+h4{font-weight:normal;}
+
+/*媒体查询变量*/
+@media (max-width: 539px) {
+    body{
+        font-size:75px;
+    }
+}
+
+/*多屏幕图片设置*/
+.img-box{
+    background-image:url(1.png);
+}
+
+/*批量设置使用系统ui字体！！慎用！！*/
+.font-box{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
+}
+
+/*嵌套*/ 
+.wrap .item-a{
+    color:#f00;
+} 
+.wrap .item-a:hover{
+    color:#3c3;
+} 
+.wrap.new-wrap{/*连带选择时只需连在一起即可*/
+    padding-top:30px;
+} 
+.container .wrap{
+    overflow:hidden;
+}
+
+/*颜色函数*/
+.color-box{
+    /*透明度为50%*/
+    color:rgba(255, 0, 0, 0.5);
+    /*让黑色亮度为50%*/ 
+    background-color:rgb(128, 128, 128);
+    background: rgba(153, 221, 153, 0.13333);
+}
+
+/*同时定义两种访问状态*/ 
+a:link,a:visited{
+    text-decoration:underline;
+}
+
+/*选择器匹配*/ 
+p:first-child, p.sss{
+    text-align:center;
+} 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+.img-box{
+    background-image:url(2.png);
+}
+} 
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 288dpi){
+.img-box{
+    background-image:url(3.png);
+}
+}

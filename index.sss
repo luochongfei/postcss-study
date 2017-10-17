@@ -1,0 +1,92 @@
+/*变量*/
+:root{
+    --white:#fff;
+}
+.box1{
+    display:flex;
+    background:var(--white);
+    border-radius:3px;
+}
+
+/*引用*/
+:root{
+    --overflow-dot:{
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+}
+.box2{
+     @apply --overflow-dot;
+}
+
+/*计算*/
+:root{
+    --fontSize:75;
+}
+.box3{
+    font-size:calc(10px/var(--fontSize));
+}  
+
+/*自定义选择器*/
+@custom-selector :--title h1,h2,h3,h4;
+:--title{font-weight:normal;}
+
+/*媒体查询变量*/
+@custom-media --view-mobile (width<540px);
+@media (--view-mobile) {
+    body{
+        font-size:75px;
+    }
+}
+
+/*多屏幕图片设置*/
+.img-box{
+    background-image:image-set(
+        url(1.png) 1x,
+        url(2.png) 2x,
+        url(3.png) 3x
+    );
+}
+
+/*批量设置使用系统ui字体！！慎用！！*/
+.font-box{
+    font-family: system-ui;
+}
+
+/*嵌套*/ 
+.wrap{
+    & .item-a{
+        color:#f00;
+        &:hover{
+            color:#3c3;
+        }
+    }
+    
+    &.new-wrap{
+        /*连带选择时只需连在一起即可*/
+        padding-top:30px;
+    }
+    @nest .container &{
+        overflow:hidden;
+    }
+}
+
+/*颜色函数*/
+.color-box{
+    /*透明度为50%*/
+    color:color(red alpha(50%));
+    /*让黑色亮度为50%*/ 
+    background-color:color(#000 l(50%));
+    background: #9d92;
+}
+
+/*同时定义两种访问状态*/ 
+a:any-link{
+    text-decoration:underline;
+}
+
+/*选择器匹配*/ 
+p:matches(:first-child,.sss){
+    text-align:center;
+}

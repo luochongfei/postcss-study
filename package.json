@@ -1,0 +1,20 @@
+{
+  "name": "postcss-study",
+  "version": "1.0.0",
+  "description": "",
+  "main": "postcss.config.js",
+  "scripts": {
+    "postcss": "postcss index.sss -o index-new.css -c postcss.config.js -w"
+  },
+  "keywords": [
+    "postcss"
+  ],
+  "author": "lcf",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^7.1.5",
+    "cssnano": "^3.10.0",
+    "postcss-cssnext": "^3.0.2"
+  },
+  "dependencies": {}
+}
